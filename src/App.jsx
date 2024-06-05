@@ -7,6 +7,8 @@ import ManageProduct from "./components/pages/admin/manage/ManageProduct";
 import Home from "./components/pages/home/Home";
 import Wishlist from "./components/pages/wishlist/Wishlist";
 import Single from "./components/pages/single/Single";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -20,6 +22,7 @@ function App() {
           <Route path="manage" element={<ManageProduct />} />
         </Route>
       </Routes>
+      <ToastContainer />
     </>
   );
 }

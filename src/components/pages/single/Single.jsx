@@ -14,12 +14,12 @@ function Single() {
       <div className="single container">
         <div className="single__card">
           <div className="single__card__img">
-            <img src={data.url} alt="" />
+            <img src={data?.url} alt="" />
           </div>
           <div className="single__card__info">
-            <h2>title: {data.title}</h2>
-            <p>category :{data.category}</p>
-            <p>price :{data.price}</p>
+            <h2>title: {data?.title}</h2>
+            <p>category :{data?.category}</p>
+            <p>price :{data?.price}</p>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos
               corrupti blanditiis magni obcaecati, nesciunt reprehenderit fuga

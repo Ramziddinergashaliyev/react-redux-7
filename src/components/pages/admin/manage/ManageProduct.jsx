@@ -4,10 +4,12 @@ import {
   useGetProductsQuery,
 } from "../../../../context/api/productApi";
 import "./manageProduct.scss";
+import { toast } from "react-toastify";
 
 function ManageProduct() {
-  const [deleteProduct, { data: deleteData, error: deleteEror }] =
+  const [deleteProduct, { data: deleteData, error: deleteEror, isSuccess }] =
     useDeleteProductMutation();
+
   const { data } = useGetProductsQuery();
   const manageData = data?.map((el) => (
     <div className="manage__card">
@@ -20,6 +22,7 @@ function ManageProduct() {
       </div>
       <div className="manage__btns">
         <button onClick={() => deleteProduct(el.id)}>Delete</button>
+        <button>Edit</button>
       </div>
     </div>
   ));

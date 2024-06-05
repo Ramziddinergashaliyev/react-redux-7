@@ -26,7 +26,7 @@ function Products() {
         <p className="products__card__text">price: {el?.price}</p>
       </div>
       <div className="products__btns">
-        <button onClick={() => dispatch(like(el))}>
+        <button className="products__like" onClick={() => dispatch(like(el))}>
           {wishlistData.some((data) => data.id === el.id) ? (
             <FaHeart color="red" />
           ) : (
