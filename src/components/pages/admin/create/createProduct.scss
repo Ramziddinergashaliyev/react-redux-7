@@ -1,0 +1,25 @@
+.form {
+  width: 600px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-direction: column;
+  padding: 40px;
+  margin: 0 auto;
+  input {
+    width: 100%;
+    padding: 14px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #aaa7;
+  }
+
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: blue;
+    color: white;
+    border: 1px solid blue;
+    border-radius: 5px;
+  }
+}
