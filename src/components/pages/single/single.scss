@@ -1,0 +1,40 @@
+.single {
+  padding: 30px 0px;
+  &__card {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 40px;
+    align-items: center;
+  }
+
+  &__card__img {
+    background-color: #aaa4;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    img {
+      width: 80%;
+    }
+  }
+
+  &__card__info {
+    h2 {
+      font-size: 40px;
+    }
+    p {
+      font-size: 18px;
+      padding: 5px 0px;
+    }
+  }
+
+  @media (max-width: 700px) {
+    &__card {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: 20px;
+      align-items: center;
+    }
+  }
+}

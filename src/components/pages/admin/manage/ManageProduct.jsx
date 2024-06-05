@@ -1,8 +1,13 @@
 import React from "react";
-import { useGetProductsQuery } from "../../../../context/api/productApi";
+import {
+  useDeleteProductMutation,
+  useGetProductsQuery,
+} from "../../../../context/api/productApi";
 import "./manageProduct.scss";
 
 function ManageProduct() {
+  const [deleteProduct, { data: deleteData, error: deleteEror }] =
+    useDeleteProductMutation();
   const { data } = useGetProductsQuery();
   const manageData = data?.map((el) => (
     <div className="manage__card">
@@ -14,8 +19,7 @@ function ManageProduct() {
         <p className="manage__card__text">price: {el?.price}</p>
       </div>
       <div className="manage__btns">
-        <button>?</button>
-        <button>Add to cart</button>
+        <button onClick={() => deleteProduct(el.id)}>Delete</button>
       </div>
     </div>
   ));

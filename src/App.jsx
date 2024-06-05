@@ -6,6 +6,7 @@ import CreateProduct from "./components/pages/admin/create/CreateProduct";
 import ManageProduct from "./components/pages/admin/manage/ManageProduct";
 import Home from "./components/pages/home/Home";
 import Wishlist from "./components/pages/wishlist/Wishlist";
+import Single from "./components/pages/single/Single";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/product/:id" element={<Single />} />
         <Route path="/admin" element={<Admin />}>
           <Route path="create" element={<CreateProduct />} />
           <Route path="manage" element={<ManageProduct />} />

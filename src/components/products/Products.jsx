@@ -1,20 +1,26 @@
 import React from "react";
 import { useGetProductsQuery } from "../../context/api/productApi";
+import { useDeleteProductMutation } from "../../context/api/productApi";
 import { FaHeart, FaRegHeart } from "react-icons/fa";
 import "./products.scss";
 import { useDispatch, useSelector } from "react-redux";
 import { like } from "../../context/apiSlice/wishlistSlice";
+import { NavLink } from "react-router-dom";
 
 function Products() {
   const { data } = useGetProductsQuery();
   const wishlistData = useSelector((state) => state.wishlist.value);
   let dispatch = useDispatch();
+  const [deleteProduct, { data: deleteData, error: deleteEror }] =
+    useDeleteProductMutation();
 
   const productData = data?.map((el) => (
     <div key={el.id} className="products__card">
-      <div className="products__card__img">
-        <img src={el?.url} alt="" />
-      </div>
+      <NavLink to={`/product/${el.id}`}>
+        <div className="products__card__img">
+          <img src={el?.url} alt="" />
+        </div>
+      </NavLink>
       <div className="products__card__info">
         <h3 className="products__card__title">title: {el?.title}</h3>
         <p className="products__card__text">price: {el?.price}</p>
@@ -27,7 +33,7 @@ function Products() {
             <FaRegHeart />
           )}
         </button>
-        <button>Add to cart</button>
+        <button onClick={() => deleteProduct(el.id)}>Add to card</button>
       </div>
     </div>
   ));
